@@ -1,0 +1,5 @@
+rootProject.name = 'starter'
+
+include 'web'
+include 'mongo'
+include 'service'

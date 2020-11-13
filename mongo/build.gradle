@@ -1,0 +1,11 @@
+dependencies {
+  compile "com.hfhk.cairo:data-mongo:${cairoVersion}"
+  compile "com.hfhk.cairo:security:${cairoVersion}"
+  compile "com.hfhk.cairo:domain:${cairoVersion}"
+  compile "com.hfhk.cairo:service:${cairoVersion}"
+
+  implementation 'org.springframework.data:spring-data-mongodb'
+
+  implementation 'org.springframework.boot:spring-boot-autoconfigure'
+
+}
