@@ -1,4 +1,4 @@
-package com.hfhk.harpoon.starter.service.security.oauth2.server.resource.authentication;
+package com.hfhk.cairo.starter.service.security.oauth2.server.resource.authentication;
 
 import cn.hutool.core.util.IdUtil;
 import com.hfhk.cairo.auth.client.AuthenticationBasicClient;
