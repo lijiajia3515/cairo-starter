@@ -1,5 +1,7 @@
 dependencies {
-  implementation "com.hfhk.cairo:core:${cairoVersion}"
-  implementation "com.hfhk.cairo:security:${cairoVersion}"
-  implementation "com.hfhk.cairo.auth:client:${cairoVersion}"
+  compile "com.hfhk.cairo:core:${cairoVersion}"
+  compile "com.hfhk.cairo:security:${cairoVersion}"
+
+  // client
+  compile "com.hfhk.cairo:auth-client:${cairoVersion}"
 }

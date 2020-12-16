@@ -1,8 +1,7 @@
 dependencies {
-  compile "com.hfhk.cairo:data-mongo:${cairoVersion}"
-  compile "com.hfhk.cairo:security:${cairoVersion}"
+  compile "com.hfhk.cairo:mongo:${cairoVersion}"
   compile "com.hfhk.cairo:domain:${cairoVersion}"
-  compile "com.hfhk.cairo:service:${cairoVersion}"
+  compile "com.hfhk.cairo:security:${cairoVersion}"
 
   implementation 'org.springframework.data:spring-data-mongodb'
 
