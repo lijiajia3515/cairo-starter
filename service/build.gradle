@@ -3,5 +3,5 @@ dependencies {
   compile "com.hfhk.cairo:security:${cairoVersion}"
 
   // client
-  compile "com.hfhk.cairo:auth-client:${cairoVersion}"
+  compile "com.hfhk.auth:auth-client:${authVersion}"
 }
