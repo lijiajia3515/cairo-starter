@@ -1,7 +1,7 @@
 package com.hfhk.cairo.starter.service.security.oauth2.server.resource.authentication;
 
 import cn.hutool.core.util.IdUtil;
-import com.hfhk.cairo.auth.client.AuthenticationBasicClient;
+import com.hfhk.auth.client.AuthenticationBasicClient;
 import com.hfhk.cairo.security.authentication.Client;
 import com.hfhk.cairo.security.authentication.RemoteUser;
 import com.hfhk.cairo.security.oauth2.server.resource.authentication.CairoAuthenticationToken;

@@ -1,6 +1,6 @@
 package com.hfhk.cairo.starter.service.autoconfigure;
 
-import com.hfhk.cairo.auth.client.AuthenticationBasicClient;
+import com.hfhk.auth.client.AuthenticationBasicClient;
 import com.hfhk.cairo.security.oauth2.expression.CairoMethodSecurityExpressionHandler;
 import com.hfhk.cairo.security.oauth2.expression.CairoWebSecurityExpressionHandler;
 import com.hfhk.cairo.starter.service.security.oauth2.server.resource.authentication.CairoJwtAuthenticationConverter;
