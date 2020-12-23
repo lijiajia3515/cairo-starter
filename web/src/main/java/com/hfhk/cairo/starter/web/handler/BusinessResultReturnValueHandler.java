@@ -26,19 +26,19 @@ import java.util.Optional;
  * 统一结果返回转换 处理器
  */
 @Slf4j
-public class ResultResponseHandler implements HandlerMethodReturnValueHandler, BeanPostProcessor {
+public class BusinessResultReturnValueHandler implements HandlerMethodReturnValueHandler, BeanPostProcessor {
 
 	private final List<ResponseBodyAdvice<Object>> advices = new ArrayList<>();
 
 	private final ObjectMapper objectMapper;
 
-	public ResultResponseHandler(ObjectMapper objectMapper) {
+	public BusinessResultReturnValueHandler(ObjectMapper objectMapper) {
 		this.objectMapper = objectMapper;
 	}
 
 	@Override
 	public boolean supportsReturnType(MethodParameter returnType) {
-		return returnType.getMethodAnnotation(StatusResult.class) != null;
+		return returnType.getMethodAnnotation(BusinessResult.class) != null;
 	}
 
 	@Override
@@ -58,7 +58,7 @@ public class ResultResponseHandler implements HandlerMethodReturnValueHandler, B
 				response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 				String valueString;
 				try {
-					valueString = objectMapper.writeValueAsString(com.hfhk.cairo.core.result.StatusResult.buildSuccess(finalReturnValue));
+					valueString = objectMapper.writeValueAsString(com.hfhk.cairo.core.result.BusinessResult.buildSuccess(finalReturnValue));
 					response.getWriter().write(valueString);
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -78,10 +78,10 @@ public class ResultResponseHandler implements HandlerMethodReturnValueHandler, B
 		} else if (bean instanceof RequestMappingHandlerAdapter) {
 			List<HandlerMethodReturnValueHandler> handlers = new ArrayList<>(
 				Objects.requireNonNull(((RequestMappingHandlerAdapter) bean).getReturnValueHandlers()));
-			ResultResponseHandler jsonHandler = null;
+			BusinessResultReturnValueHandler jsonHandler = null;
 			for (HandlerMethodReturnValueHandler handler : handlers) {
-				if (handler instanceof ResultResponseHandler) {
-					jsonHandler = (ResultResponseHandler) handler;
+				if (handler instanceof BusinessResultReturnValueHandler) {
+					jsonHandler = (BusinessResultReturnValueHandler) handler;
 					break;
 				}
 			}

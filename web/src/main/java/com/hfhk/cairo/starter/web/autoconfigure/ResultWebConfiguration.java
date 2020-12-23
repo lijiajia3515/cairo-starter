@@ -1,7 +1,7 @@
 package com.hfhk.cairo.starter.web.autoconfigure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hfhk.cairo.starter.web.handler.ResultResponseHandler;
+import com.hfhk.cairo.starter.web.handler.BusinessResultReturnValueHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 public class ResultWebConfiguration {
 
 	@Bean
-	public ResultResponseHandler resultResponseHandler(ObjectMapper objectMapper) {
-		return new ResultResponseHandler(objectMapper);
+	public BusinessResultReturnValueHandler resultResponseHandler(ObjectMapper objectMapper) {
+		return new BusinessResultReturnValueHandler(objectMapper);
 	}
 
 }
