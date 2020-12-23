@@ -2,7 +2,7 @@ package com.hfhk.cairo.starter.mongo.auditing;
 
 
 import com.hfhk.cairo.security.authentication.User;
-import com.hfhk.cairo.security.oauth2.server.resource.authentication.CairoAuthenticationToken;
+import com.hfhk.cairo.security.oauth2.server.resource.authentication.CairoAuthentication;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,8 +16,8 @@ public class UidAuditorWare implements AuditorAware<String> {
 
 		return Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication())
 			.flatMap(authentication -> {
-				if (authentication instanceof CairoAuthenticationToken) {
-					return Optional.ofNullable(((CairoAuthenticationToken) authentication).getUser())
+				if (authentication instanceof CairoAuthentication) {
+					return Optional.ofNullable(((CairoAuthentication) authentication).getUser())
 						.map(User::getUid);
 				}
 				if (authentication instanceof AnonymousAuthenticationToken) {
