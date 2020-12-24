@@ -1,4 +1,4 @@
-package com.hfhk.cairo.starter.web.handler;
+package com.hfhk.cairo.starter.service.web.handler;
 
 import java.lang.annotation.*;
 
