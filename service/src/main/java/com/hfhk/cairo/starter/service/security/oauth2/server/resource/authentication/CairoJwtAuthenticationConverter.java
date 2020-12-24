@@ -3,6 +3,7 @@ package com.hfhk.cairo.starter.service.security.oauth2.server.resource.authentic
 import com.hfhk.auth.client.AuthenticationBasicClient;
 import com.hfhk.cairo.security.authentication.RemoteUser;
 import com.hfhk.cairo.security.oauth2.server.resource.authentication.CairoAuthentication;
+import com.hfhk.cairo.security.oauth2.user.AuthPrincipal;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,13 +23,13 @@ public class CairoJwtAuthenticationConverter implements Converter<Jwt, AbstractA
 	@Override
 	public CairoAuthentication convert(Jwt source) {
 		RemoteUser remoteUser = authenticationBasicClient.authentication("Bearer " + source.getTokenValue());
-		return new CairoAuthentication(source,
+		;
+		return new CairoAuthentication(new AuthPrincipal(source, remoteUser.getUser()),
 			Optional.ofNullable(remoteUser.getAuthorities())
 				.stream()
 				.flatMap(Collection::stream)
 				.map(SimpleGrantedAuthority::new)
-				.collect(Collectors.toList()),
-			remoteUser.getUser()
+				.collect(Collectors.toList())
 		);
 	}
 }
