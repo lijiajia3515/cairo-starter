@@ -38,7 +38,7 @@ public class HfhkSecurityOAuth2Configuration {
 		}
 
 		@Bean
-		@ConditionalOnBean(CairoBearerTokenAccessDeniedHandler.class)
+		@ConditionalOnMissingBean
 		public CairoBearerTokenAccessDeniedHandler hfhkBearerTokenAccessDeniedHandler(ObjectMapper objectMapper) {
 			return new CairoBearerTokenAccessDeniedHandler()
 				.realmName("hfhk")
