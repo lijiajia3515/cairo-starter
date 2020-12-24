@@ -1,5 +1,5 @@
 dependencies {
-  implementation "com.hfhk.cairo:core:${cairoVersion}"
+  compile "com.hfhk.cairo:core:${cairoVersion}"
 
   implementation 'org.springframework:spring-core'
   implementation 'org.springframework:spring-beans'
