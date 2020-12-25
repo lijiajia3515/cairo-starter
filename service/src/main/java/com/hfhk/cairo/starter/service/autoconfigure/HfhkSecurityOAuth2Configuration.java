@@ -27,7 +27,7 @@ public class HfhkSecurityOAuth2Configuration {
 
 	@Configuration(proxyBeanMethods = false)
 	@ConditionalOnClass(ObjectMapper.class)
-	static class HandlerConfiguration {
+	public static class HandlerConfiguration {
 
 		@Bean
 		@ConditionalOnMissingBean
@@ -47,9 +47,9 @@ public class HfhkSecurityOAuth2Configuration {
 
 	}
 
-	@Configuration
+	@Configuration(proxyBeanMethods = false)
 	@ConditionalOnBean(AuthenticationBasicClient.class)
-	static class ResourceServerConfiguration {
+	public static class ResourceServerConfiguration {
 
 		@Bean
 		@ConditionalOnMissingBean

@@ -15,7 +15,7 @@ public class HfhkWebConfiguration {
 
 	@Configuration(proxyBeanMethods = false)
 	@ConditionalOnClass(ObjectMapper.class)
-	static class ReturnValueConfiguration {
+	public static class ReturnValueConfiguration {
 
 		@Bean
 		@ConditionalOnMissingBean
