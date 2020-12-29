@@ -48,7 +48,7 @@ public class HfhkSecurityOAuth2Configuration {
 	}
 
 	@Configuration(proxyBeanMethods = false)
-	@ConditionalOnBean(AuthenticationBasicClient.class)
+	@ConditionalOnClass(AuthenticationBasicClient.class)
 	public static class ResourceServerConfiguration {
 
 		@Bean
