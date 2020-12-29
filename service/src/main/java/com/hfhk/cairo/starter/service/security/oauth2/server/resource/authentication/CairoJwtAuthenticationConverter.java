@@ -1,6 +1,6 @@
 package com.hfhk.cairo.starter.service.security.oauth2.server.resource.authentication;
 
-import com.hfhk.auth.client.AuthenticationBasicClient;
+import com.hfhk.auth.client.AuthBasicClient;
 import com.hfhk.cairo.security.authentication.RemoteUser;
 import com.hfhk.cairo.security.oauth2.server.resource.authentication.CairoAuthentication;
 import com.hfhk.cairo.security.oauth2.user.AuthPrincipal;
@@ -14,15 +14,15 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class CairoJwtAuthenticationConverter implements Converter<Jwt, AbstractAuthenticationToken> {
-	private final AuthenticationBasicClient authenticationBasicClient;
+	private final AuthBasicClient authBasicClient;
 
-	public CairoJwtAuthenticationConverter(AuthenticationBasicClient authenticationBasicClient) {
-		this.authenticationBasicClient = authenticationBasicClient;
+	public CairoJwtAuthenticationConverter(AuthBasicClient authBasicClient) {
+		this.authBasicClient = authBasicClient;
 	}
 
 	@Override
 	public CairoAuthentication convert(Jwt source) {
-		RemoteUser remoteUser = authenticationBasicClient.authentication("Bearer " + source.getTokenValue());
+		RemoteUser remoteUser = authBasicClient.auth("Bearer " + source.getTokenValue());
 		;
 		return new CairoAuthentication(new AuthPrincipal(source, remoteUser.getUser()),
 			Optional.ofNullable(remoteUser.getAuthorities())

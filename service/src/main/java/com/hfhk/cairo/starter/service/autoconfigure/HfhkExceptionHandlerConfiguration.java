@@ -22,7 +22,7 @@ public class HfhkExceptionHandlerConfiguration {
 
 	@ExceptionHandler(BusinessException.class)
 	@ResponseStatus(HttpStatus.OK)
-	public Result<Object> statusException(BusinessException e, HttpServletRequest request, HttpServletResponse response) {
+	public BusinessResult<Object> statusException(BusinessException e, HttpServletRequest request, HttpServletResponse response) {
 		e.printStackTrace();
 		log.info("[Exception] url-> [{}]", request.getRequestURI());
 		HttpStatus status = (e.getStatus().success()) ? HttpStatus.OK : HttpStatus.INTERNAL_SERVER_ERROR;
@@ -32,7 +32,7 @@ public class HfhkExceptionHandlerConfiguration {
 
 	@ExceptionHandler(RuntimeException.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	public Result<Object> runtimeException(RuntimeException e, HttpServletRequest request) {
+	public BusinessResult<Object> runtimeException(RuntimeException e, HttpServletRequest request) {
 		e.printStackTrace();
 		log.info("[RuntimeException] url-> [{}]", request.getRequestURI());
 		return BusinessResult.buildFailed();
@@ -40,7 +40,7 @@ public class HfhkExceptionHandlerConfiguration {
 
 	@ExceptionHandler(HttpRequestMethodNotSupportedException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
-	public Result<Object> httpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e, HttpServletRequest request) {
+	public BusinessResult<Object> httpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException e, HttpServletRequest request) {
 		e.printStackTrace();
 		log.info("[HttpRequestMethodNotSupportedException] url-> [{}]", request.getRequestURI());
 		return new BusinessResult<>(false, DefaultBusiness.Failed.code(), e.getMessage(), e.getMethod());
@@ -48,7 +48,7 @@ public class HfhkExceptionHandlerConfiguration {
 
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler(Exception.class)
-	public Result<Object> exception(Exception e, HttpServletRequest request) {
+	public BusinessResult<Object> exception(Exception e, HttpServletRequest request) {
 		e.printStackTrace();
 		log.info("[Exception] url-> [{}]", request.getRequestURI());
 		return BusinessResult.buildUnknown();

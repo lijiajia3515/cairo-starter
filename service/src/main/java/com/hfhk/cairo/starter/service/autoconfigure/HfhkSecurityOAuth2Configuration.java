@@ -1,11 +1,10 @@
 package com.hfhk.cairo.starter.service.autoconfigure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hfhk.auth.client.AuthenticationBasicClient;
+import com.hfhk.auth.client.AuthBasicClient;
 import com.hfhk.cairo.security.oauth2.server.resource.web.CairoBearerTokenAccessDeniedHandler;
 import com.hfhk.cairo.security.oauth2.server.resource.web.CairoBearerTokenAuthenticationEntryPoint;
 import com.hfhk.cairo.starter.service.security.oauth2.server.resource.authentication.CairoJwtAuthenticationConverter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -48,13 +47,13 @@ public class HfhkSecurityOAuth2Configuration {
 	}
 
 	@Configuration(proxyBeanMethods = false)
-	@ConditionalOnClass(AuthenticationBasicClient.class)
+	@ConditionalOnClass(AuthBasicClient.class)
 	public static class ResourceServerConfiguration {
 
 		@Bean
 		@ConditionalOnMissingBean
-		public CairoJwtAuthenticationConverter cairoJwtAuthenticationConverter(AuthenticationBasicClient authenticationBasicClient) {
-			return new CairoJwtAuthenticationConverter(authenticationBasicClient);
+		public CairoJwtAuthenticationConverter cairoJwtAuthenticationConverter(AuthBasicClient authBasicClient) {
+			return new CairoJwtAuthenticationConverter(authBasicClient);
 		}
 	}
 

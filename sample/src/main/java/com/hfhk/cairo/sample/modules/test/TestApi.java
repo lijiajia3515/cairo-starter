@@ -1,6 +1,6 @@
 package com.hfhk.cairo.sample.modules.test;
 
-import com.hfhk.auth.client.AuthenticationBasicClient;
+import com.hfhk.auth.client.AuthBasicClient;
 import com.hfhk.cairo.starter.service.web.handler.query.RequestMessageParam;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -18,16 +18,16 @@ import java.util.Map;
 @RestController
 @RequestMapping("/test")
 public class TestApi {
-	private final AuthenticationBasicClient client;
+	private final AuthBasicClient client;
 
-	public TestApi(AuthenticationBasicClient client) {
+	public TestApi(AuthBasicClient client) {
 		this.client = client;
 	}
 
 	@RequestMapping
 	@PermitAll
 	public Object test() {
-		return client.authentication("");
+		return client.auth("");
 	}
 
 	@RequestMapping("/b")

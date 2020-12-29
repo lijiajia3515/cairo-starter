@@ -1,7 +1,6 @@
 package com.hfhk.cairo.sample.config;
 
 
-import com.hfhk.auth.client.AuthenticationBasicClient;
 import com.hfhk.cairo.security.oauth2.server.resource.web.CairoBearerTokenAccessDeniedHandler;
 import com.hfhk.cairo.security.oauth2.server.resource.web.CairoBearerTokenAuthenticationEntryPoint;
 import com.hfhk.cairo.starter.service.security.oauth2.server.resource.authentication.CairoJwtAuthenticationConverter;
