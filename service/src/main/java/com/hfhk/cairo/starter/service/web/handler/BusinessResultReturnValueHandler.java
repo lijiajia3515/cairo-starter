@@ -47,7 +47,7 @@ public class BusinessResultReturnValueHandler implements HandlerMethodReturnValu
 		mavContainer.setRequestHandled(true);
 		for (ResponseBodyAdvice<Object> ad : advices) {
 			if (ad.supports(returnType, null)) {
-				returnValue = ad.beforeBodyWrite(returnValue, returnType, MediaType.APPLICATION_JSON, null, new ServletServerHttpRequest(Objects.requireNonNull(webRequest.getNativeRequest(HttpServletRequest.class))), new ServletServerHttpResponse(Objects.requireNonNull(webRequest.getNativeResponse(HttpServletResponse.class))));
+				returnValue = ad.beforeBodyWrite(returnValue, returnType, MediaType.APPLICATION_JSON_UTF8, null, new ServletServerHttpRequest(Objects.requireNonNull(webRequest.getNativeRequest(HttpServletRequest.class))), new ServletServerHttpResponse(Objects.requireNonNull(webRequest.getNativeResponse(HttpServletResponse.class))));
 			}
 		}
 
@@ -55,7 +55,7 @@ public class BusinessResultReturnValueHandler implements HandlerMethodReturnValu
 		Optional.of(webRequest)
 			.map(r -> r.getNativeResponse(HttpServletResponse.class))
 			.ifPresent(response -> {
-				response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+				response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 				String valueString;
 				try {
 					valueString = objectMapper.writeValueAsString(com.hfhk.cairo.core.result.BusinessResult.buildSuccess(finalReturnValue));
