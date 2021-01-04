@@ -4,8 +4,8 @@ dependencies {
   // autoconfigure
   implementation 'org.springframework.boot:spring-boot-autoconfigure'
 
-  compile "com.hfhk.cairo:core:${cairoVersion}"
-  compile "com.hfhk.cairo:security:${cairoVersion}"
+  compile "com.hfhk.cairo:cairo-core:${cairoVersion}"
+  compile "com.hfhk.cairo:cairo-security:${cairoVersion}"
   compile "com.hfhk.auth:auth-client:${authVersion}"
 
   implementation 'org.springframework:spring-core'
