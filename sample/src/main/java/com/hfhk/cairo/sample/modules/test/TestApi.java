@@ -5,15 +5,11 @@ import com.hfhk.cairo.starter.service.web.handler.query.RequestMessageParam;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.security.PermitAll;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/test")

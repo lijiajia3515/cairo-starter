@@ -5,7 +5,7 @@ dependencies {
   compile "com.hfhk.cairo:cairo-domain:${cairoVersion}"
   compile "com.hfhk.cairo:cairo-security:${cairoVersion}"
 
-  implementation 'org.springframework.data:spring-data-mongodb'
+  compile 'org.springframework.data:spring-data-mongodb'
 
   implementation 'org.springframework.boot:spring-boot-autoconfigure'
 
