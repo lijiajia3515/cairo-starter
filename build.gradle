@@ -12,9 +12,8 @@ plugins {
 
 allprojects {
   apply from: "${rootDir}/gradle/repositories.gradle"
-  group = 'com.hfhk.cairo.starter'
 
-  // name = "Cairo"
+  group = 'com.hfhk.cairo.starter'
   description = "Hao Fang Software Projects"
 
   tasks.withType(JavaCompile) {
