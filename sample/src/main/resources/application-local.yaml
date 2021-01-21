@@ -20,8 +20,8 @@ hfhk:
     server-addr: 192.168.30.21:8848
     discovery:
       server-addr: 192.168.30.21:8848
-      namespace: hfhk
-      group: hfhk
+      namespace: local
+      group: local
 
 server:
   port: 10011
