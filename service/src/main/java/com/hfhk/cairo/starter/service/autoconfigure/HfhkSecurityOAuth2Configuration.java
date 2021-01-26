@@ -1,7 +1,7 @@
 package com.hfhk.cairo.starter.service.autoconfigure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hfhk.auth.client.AuthBasicClient;
+import com.hfhk.auth.modules.auth.client.AuthBasicClient;
 import com.hfhk.cairo.security.oauth2.server.resource.web.CairoBearerTokenAccessDeniedHandler;
 import com.hfhk.cairo.security.oauth2.server.resource.web.CairoBearerTokenAuthenticationEntryPoint;
 import com.hfhk.cairo.starter.service.security.oauth2.server.resource.authentication.CairoJwtAuthenticationConverter;

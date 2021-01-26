@@ -1,6 +1,6 @@
 package com.hfhk.cairo.sample.modules.test;
 
-import com.hfhk.auth.client.AuthBasicClient;
+import com.hfhk.auth.modules.auth.client.AuthBasicClient;
 import com.hfhk.cairo.starter.service.web.handler.query.RequestMessageParam;
 import lombok.Data;
 import lombok.experimental.Accessors;
