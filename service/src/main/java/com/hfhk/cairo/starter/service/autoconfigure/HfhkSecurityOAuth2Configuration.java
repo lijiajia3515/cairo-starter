@@ -62,6 +62,7 @@ public class HfhkSecurityOAuth2Configuration {
 	// public SecurityExpressionHandler<FilterInvocation> cairoWebSecurityExpressionHandler() {
 	// 	return new CairoWebSecurityExpressionHandler();
 	// }
+
 	// @Bean
 	// public MethodSecurityExpressionHandler cairoMethodSecurityExpressionHandler() {
 	// 	return new CairoMethodSecurityExpressionHandler();
