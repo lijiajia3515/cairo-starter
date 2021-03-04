@@ -1,15 +1,7 @@
-rootProject.name = 'starter'
-
-// include 'mongo'
+rootProject.name = 'cairo-starter'
 
 include 'cairo-starter-mongo'
-project(':cairo-starter-mongo').projectDir = file("mongo")
 
 include 'cairo-starter-service'
-project(':cairo-starter-service').projectDir = file("service")
-
-
-
-// include 'service'
 
 include 'sample'
