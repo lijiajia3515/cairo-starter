@@ -14,7 +14,7 @@ allprojects {
   apply from: "${rootDir}/gradle/repositories.gradle"
 
   group = 'com.lijiajia3515.cairo.starter'
-  description = "Hao Fang Software Projects"
+  description = "LiJiaJia Cairo Software Projects"
 
   tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"

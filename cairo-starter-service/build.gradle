@@ -18,5 +18,5 @@ dependencies {
 
   // cairo
   compile "com.lijiajia3515.cairo:cairo-security:${cairoVersion}"
-  compile "com.lijiajia3515.cairo.auth:cairo-auth-client:${cairoAuthVersion}"
+  compile "com.lijiajia3515.cairo.auth:cairo-authentication:${cairoAuthenticationVersion}"
 }

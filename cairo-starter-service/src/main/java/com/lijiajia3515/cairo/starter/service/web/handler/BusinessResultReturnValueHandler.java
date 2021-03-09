@@ -58,7 +58,7 @@ public class BusinessResultReturnValueHandler implements HandlerMethodReturnValu
 				response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 				String valueString;
 				try {
-					valueString = objectMapper.writeValueAsString(com.hfhk.cairo.core.result.BusinessResult.buildSuccess(finalReturnValue));
+					valueString = objectMapper.writeValueAsString(com.lijiajia3515.cairo.core.result.BusinessResult.buildSuccess(finalReturnValue));
 					response.getWriter().write(valueString);
 				} catch (IOException e) {
 					e.printStackTrace();

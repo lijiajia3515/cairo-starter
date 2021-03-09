@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
 
-@EnableFeignClients("com.lijiajia3515.demo.**.client")
+@EnableFeignClients("com.lijiajia3515.cairo.**.client")
 @Configuration
 public class FeignConfig {
 

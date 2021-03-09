@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass(ObjectMapper.class)
-public class HfhkWebConfiguration {
+public class CairoWebConfiguration {
 
 
 	@Configuration(proxyBeanMethods = false)

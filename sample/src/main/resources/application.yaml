@@ -113,27 +113,10 @@ feign:
     config:
       default:
         logger-level: FULL
-      serviceAuthV1-auth-basic-client:
+      authenticationClient:
         logger-level: FULL
         request-interceptors:
           - com.hfhk.cairo.feign.interceptor.BasicRequestInterceptor
-      serviceAuthV1-user-clientCredentials-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.ClientOAuth2RequestInterceptor
-          -
-      serviceSystemV1-file-request-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.RequestOAuth2RequestInterceptor
-      serviceSystemV1-file-clientCredentials-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.ClientOAuth2RequestInterceptor
-      serviceSystemV1-dictionary-clientCredentials-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.ClientOAuth2RequestInterceptor
 
 management:
   endpoints:

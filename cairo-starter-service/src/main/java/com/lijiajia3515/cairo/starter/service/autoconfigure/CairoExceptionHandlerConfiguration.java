@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j(topic = "[ExceptionHandler]")
 @RestControllerAdvice
 @Configuration
-public class HfhkExceptionHandlerConfiguration {
+public class CairoExceptionHandlerConfiguration {
 
 	@ExceptionHandler(BusinessException.class)
 	@ResponseStatus(HttpStatus.OK)

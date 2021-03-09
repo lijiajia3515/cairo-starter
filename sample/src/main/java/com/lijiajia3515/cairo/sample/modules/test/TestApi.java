@@ -1,6 +1,6 @@
 package com.lijiajia3515.cairo.sample.modules.test;
 
-import com.hfhk.auth.modules.auth.client.AuthBasicClient;
+import com.lijiajia3515.cairo.auth.modules.auth.client.AuthenticationClient;
 import com.lijiajia3515.cairo.starter.service.web.handler.query.RequestMessageParam;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -14,16 +14,16 @@ import javax.validation.constraints.NotNull;
 @RestController
 @RequestMapping("/test")
 public class TestApi {
-	private final AuthBasicClient client;
+	private final AuthenticationClient client;
 
-	public TestApi(AuthBasicClient client) {
+	public TestApi(AuthenticationClient client) {
 		this.client = client;
 	}
 
 	@RequestMapping
 	@PermitAll
 	public Object test() {
-		return client.auth("");
+		return client.authentication("");
 	}
 
 	@RequestMapping("/b")
