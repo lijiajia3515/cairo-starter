@@ -15,6 +15,8 @@ dependencies {
 
   // web
   implementation 'org.apache.tomcat.embed:tomcat-embed-core'
+  implementation 'io.github.openfeign:feign-okhttp'
+  implementation 'com.squareup.okhttp3:okhttp'
 
   // cairo
   compile "com.lijiajia3515.cairo:cairo-security:${cairoVersion}"

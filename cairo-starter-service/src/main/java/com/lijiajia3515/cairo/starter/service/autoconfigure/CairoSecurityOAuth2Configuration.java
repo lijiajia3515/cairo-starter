@@ -5,15 +5,11 @@ import com.lijiajia3515.cairo.auth.modules.auth.client.AuthenticationClient;
 import com.lijiajia3515.cairo.security.oauth2.server.resource.web.CairoBearerTokenAccessDeniedHandler;
 import com.lijiajia3515.cairo.security.oauth2.server.resource.web.CairoBearerTokenAuthenticationEntryPoint;
 import com.lijiajia3515.cairo.starter.service.security.oauth2.server.resource.authentication.CairoJwtAuthenticationConverter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.convert.converter.Converter;
-import org.springframework.security.authentication.AbstractAuthenticationToken;
-import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.web.BearerTokenResolver;
 import org.springframework.security.oauth2.server.resource.web.DefaultBearerTokenResolver;
 
@@ -31,7 +27,7 @@ public class CairoSecurityOAuth2Configuration {
 
 	@Configuration(proxyBeanMethods = false)
 	@ConditionalOnClass(ObjectMapper.class)
-	public static class HandlerConfiguration {
+	public static class Handler {
 
 		@Bean
 		@ConditionalOnMissingBean
@@ -52,12 +48,12 @@ public class CairoSecurityOAuth2Configuration {
 	}
 
 	@Configuration(proxyBeanMethods = false)
-	public static class ResourceServerConfiguration {
+	public static class ResourceServer {
 
 		@Bean
 		@ConditionalOnMissingBean
-		public Converter<Jwt, AbstractAuthenticationToken> cairoJwtAuthenticationConverter(AuthenticationClient authBasicClient) {
-			return new CairoJwtAuthenticationConverter(authBasicClient);
+		public CairoJwtAuthenticationConverter cairoJwtAuthenticationConverter(ObjectProvider<AuthenticationClient> client) {
+			return new CairoJwtAuthenticationConverter(client.getIfAvailable());
 		}
 	}
 
