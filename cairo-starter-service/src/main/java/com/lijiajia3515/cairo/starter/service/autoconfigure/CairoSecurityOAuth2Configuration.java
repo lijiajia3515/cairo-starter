@@ -18,7 +18,7 @@ public class CairoSecurityOAuth2Configuration {
 
 	@Bean
 	@ConditionalOnMissingBean
-	public BearerTokenResolver hfhkBearerTokenResolver() {
+	public BearerTokenResolver cairoBearerTokenResolver() {
 		DefaultBearerTokenResolver resolver = new DefaultBearerTokenResolver();
 		resolver.setAllowFormEncodedBodyParameter(true);
 		resolver.setAllowUriQueryParameter(true);

@@ -19,6 +19,5 @@ dependencies {
   implementation 'com.squareup.okhttp3:okhttp'
 
   // cairo
-  compile "com.lijiajia3515.cairo:cairo-security:${cairoVersion}"
-  compile "com.lijiajia3515.cairo.auth:cairo-authentication:${cairoAuthenticationVersion}"
+  compile project(":cairo-authentication")
 }

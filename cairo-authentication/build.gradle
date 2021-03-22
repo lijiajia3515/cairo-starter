@@ -1,0 +1,8 @@
+apply from: "${rootDir}/gradle/publish.gradle"
+
+group = 'com.lijiajia3515.cairo'
+
+dependencies {
+  compile "com.lijiajia3515.cairo:cairo-client:${cairoVersion}"
+}
+
