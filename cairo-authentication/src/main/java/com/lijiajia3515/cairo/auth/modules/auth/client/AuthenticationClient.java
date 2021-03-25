@@ -6,7 +6,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-@FeignClient(name = "${lijiajia3515.server.auth:auth-server}", url = "${lijiajia3515.auth.server:http://auth-server}", path = "/", contextId = "authenticationClient")
+@FeignClient(name = "${lijiajia3515.server.auth:auth-server}", url = "http://${lijiajia3515.auth.server:auth-server}", path = "/", contextId = "authenticationClient")
 public interface AuthenticationClient {
 
 	@GetMapping("/authentication")
