@@ -6,4 +6,4 @@ include 'cairo-starter-mongo'
 
 include 'cairo-starter-service'
 
-include 'sample'
+// include 'sample'
