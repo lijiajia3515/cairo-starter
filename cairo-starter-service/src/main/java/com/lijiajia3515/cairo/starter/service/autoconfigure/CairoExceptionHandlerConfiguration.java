@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CairoExceptionHandlerConfiguration {
 
 	@ExceptionHandler(BusinessException.class)
-	@ResponseStatus(HttpStatus.OK)
+	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public BusinessResult<Object> statusException(BusinessException e, HttpServletRequest request, HttpServletResponse response) {
 		e.printStackTrace();
 		log.info("[Exception] url-> [{}]", request.getRequestURI());
