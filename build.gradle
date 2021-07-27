@@ -18,7 +18,7 @@ allprojects {
 
   group = 'com.lijiajia3515.cairo.starter'
   description = "LiJiaJia Cairo Software Projects"
-  version = DateTimeFormatter.ofPattern("yyyy.mm.dd.hh.MM.ss'-SNAPSHOT'", Locale.CHINA).format(LocalDateTime.now())
+  // version = DateTimeFormatter.ofPattern("yyyy.mm.dd.hh.MM.ss'-SNAPSHOT'", Locale.CHINA).format(LocalDateTime.now())
 
   tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"

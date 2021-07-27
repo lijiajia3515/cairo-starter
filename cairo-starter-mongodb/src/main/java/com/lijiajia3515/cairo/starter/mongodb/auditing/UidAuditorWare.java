@@ -1,4 +1,4 @@
-package com.lijiajia3515.cairo.starter.mongo.auditing;
+package com.lijiajia3515.cairo.starter.mongodb.auditing;
 
 
 import com.lijiajia3515.cairo.domain.auth.User;

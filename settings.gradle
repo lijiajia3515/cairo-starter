@@ -1,7 +1,9 @@
 pluginManagement {
+
   plugins {
 
   }
+
   resolutionStrategy {
 
   }
@@ -13,11 +15,7 @@ pluginManagement {
 }
 
 rootProject.name = 'cairo-starter'
-
 include 'cairo-authentication'
-
-include 'cairo-starter-mongo'
-
+include 'cairo-starter-mongodb'
 include 'cairo-starter-service'
-
 // include 'sample'

@@ -1,6 +1,6 @@
-package com.lijiajia3515.cairo.starter.mongo.autoconfigure;
+package com.lijiajia3515.cairo.starter.mongodb.autoconfigure;
 
-import com.lijiajia3515.cairo.starter.mongo.auditing.UidAuditorWare;
+import com.lijiajia3515.cairo.starter.mongodb.auditing.UidAuditorWare;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
@@ -13,5 +13,5 @@ public class MongoAuditorConfig {
 	public UidAuditorWare uidAuditorWare() {
 		return new UidAuditorWare();
 	}
-
+	
 }

@@ -1,8 +1,9 @@
 apply from: "${rootDir}/gradle/publish.gradle"
 
 dependencies {
-  api "com.lijiajia3515.cairo:cairo-mongo:${cairoVersion}"
+  api "com.lijiajia3515.cairo:cairo-mongodb:${cairoVersion}"
   api "com.lijiajia3515.cairo:cairo-security:${cairoVersion}"
+
   api 'org.springframework.data:spring-data-mongodb'
   api 'org.springframework.boot:spring-boot-autoconfigure'
 }
