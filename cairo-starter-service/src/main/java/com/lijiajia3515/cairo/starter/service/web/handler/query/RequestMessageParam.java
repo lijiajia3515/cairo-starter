@@ -8,7 +8,8 @@ import java.lang.annotation.*;
 public @interface RequestMessageParam {
 	/**
 	 * 是否必须
-	 * @return
+	 *
+	 * @return 是否必须
 	 */
 	boolean required() default true;
 

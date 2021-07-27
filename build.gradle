@@ -1,3 +1,6 @@
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 buildscript {
   apply from: "${rootDir}/gradle/repositories.gradle"
   ext {
@@ -6,8 +9,8 @@ buildscript {
 }
 
 plugins {
-  id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply false
-  id 'org.springframework.boot' version '2.4.4' apply false
+  id 'io.spring.dependency-management' version "${dependencyManagementVersion}" apply false
+  id 'org.springframework.boot' version "${springBootVersion}" apply false
 }
 
 allprojects {
@@ -15,9 +18,19 @@ allprojects {
 
   group = 'com.lijiajia3515.cairo.starter'
   description = "LiJiaJia Cairo Software Projects"
+  version = DateTimeFormatter.ofPattern("yyyy.mm.dd.hh.MM.ss'-SNAPSHOT'", Locale.CHINA).format(LocalDateTime.now())
 
   tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
+  }
+
+  configurations {
+    all {
+      // 动态版本更新时间
+      resolutionStrategy.cacheChangingModulesFor 0, 'hours'
+      // gradle module 更新时间
+      resolutionStrategy.cacheChangingModulesFor 0, 'hours'
+    }
   }
 }
 
