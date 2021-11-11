@@ -37,25 +37,25 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://${hfhk.auth.server}/oauth2/jwks
+          jwk-set-uri: http://${lijiajia3515.auth.server}/oauth2/jwks
   data:
     mongodb:
       auto-index-creation: true
-      field-naming-strategy: com.hfhk.cairo.mongo.data.mapping.model.UpperCamelCaseFieldNamingStrategy
-      database: ${hfhk.mongo.database:hfhk-system}
+      field-naming-strategy: com.lijiajia3515.cairo.mongo.data.mapping.model.UpperCamelCaseFieldNamingStrategy
+      database: ${lijiajia3515.mongodb.database:hfhk-system}
       gridfs:
-        bucket: ${hfhk.mongo.grfs.database:system}
+        bucket: ${lijiajia3515.mongodb.grfs.database:system}
         database: hfhk-store
-      host: ${hfhk.mongo.host:localhost}
-      port: ${hfhk.mongo.port:27017}
-      username: ${hfhk.mongo.username:hfhk}
-      password: ${hfhk.mongo.password:Hfhk.1320.}
-      authentication-database: ${hfhk.mongo.authentication-database:hfhk}
+      host: ${lijiajia3515.mongodb.host:localhost}
+      port: ${lijiajia3515.mongodb.port:27017}
+      username: ${lijiajia3515.mongodb.username:hfhk}
+      password: ${lijiajia3515.mongodb.password:Hfhk.1320.}
+      authentication-database: ${lijiajia3515.mongodb.authentication-database:hfhk}
   redis:
-    database: ${hfhk.redis.database:11}
-    host: ${hfhk.redis.host:localhost}
-    port: ${hfhk.redis.port:6379}
-    password: ${hfhk.redis.password:Hfhk-!@#-1230.}
+    database: ${lijiajia3515.redis.database:11}
+    host: ${lijiajia3515.redis.host:localhost}
+    port: ${lijiajia3515.redis.port:6379}
+    password: ${lijiajia3515.redis.password:Hfhk-!@#-1230.}
     timeout: 10s
     lettuce:
       shutdown-timeout: 5000ms
@@ -66,11 +66,11 @@ spring:
         min-idle: 0
   cloud:
     nacos:
-      server-addr: ${hfhk.nacos.server-addr:localhost:8848}
+      server-addr: ${lijiajia3515.nacos.server-addr:localhost:8848}
       discovery:
-        server-addr: ${hfhk.nacos.discovery.server-addr:${hfhk.nacos.server-addr:localhost:8848}}
-        namespace: ${hfhk.nacos.discovery.namespace:${hfhk.nacos.namespace:hfhk}}
-        group: ${hfhk.nacos.discovery.group:${hfhk.nacos.group:hfhk}}
+        server-addr: ${lijiajia3515.nacos.discovery.server-addr:${hfhk.nacos.server-addr:localhost:8848}}
+        namespace: ${lijiajia3515.nacos.discovery.namespace:${hfhk.nacos.namespace:hfhk}}
+        group: ${lijiajia3515.nacos.discovery.group:${hfhk.nacos.group:hfhk}}
         metadata:
           version: v1
 
@@ -79,7 +79,7 @@ logging:
     root: info
     com.hfhk: debug
   file:
-    name: /hfhk/system/service/logs/hfhk.log
+    name: /lijiajia3515/system/service/logs/hfhk.log
 
 server:
   port: 80
@@ -113,28 +113,6 @@ feign:
     config:
       default:
         logger-level: FULL
-      serviceAuthV1-auth-basic-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.BasicRequestInterceptor
-      serviceAuthV1-user-clientCredentials-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.ClientOAuth2RequestInterceptor
-          -
-      serviceSystemV1-file-request-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.RequestOAuth2RequestInterceptor
-      serviceSystemV1-file-clientCredentials-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.ClientOAuth2RequestInterceptor
-      serviceSystemV1-dictionary-clientCredentials-client:
-        logger-level: FULL
-        request-interceptors:
-          - com.hfhk.cairo.feign.interceptor.ClientOAuth2RequestInterceptor
-
 management:
   endpoints:
     web:

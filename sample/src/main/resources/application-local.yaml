@@ -1,10 +1,10 @@
-hfhk:
+lijiajia3515:
   auth:
     server: auth.hfhksoft.com
     client:
       id: hfhk_system
       secret: hfhk_system
-  mongo:
+  mongodb:
     database: hfhk-system
     authentication-database: hfhk
     host: 192.168.30.21

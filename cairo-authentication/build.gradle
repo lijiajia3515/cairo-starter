@@ -1,0 +1,8 @@
+apply from: "${rootDir}/gradle/publish.gradle"
+
+
+dependencies {
+  api(group: 'com.lijiajia3515.cairo', name: 'cairo-client', version: "${cairoVersion}")
+  api(project(":cairo-starter-feign"))
+}
+

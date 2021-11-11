@@ -1,15 +1,21 @@
-rootProject.name = 'starter'
+pluginManagement {
+  plugins {
 
-// include 'mongo'
+  }
+  resolutionStrategy {
 
-include 'cairo-starter-mongo'
-project(':cairo-starter-mongo').projectDir = file("mongo")
+  }
 
+  repositories {
+    maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+    gradlePluginPortal()
+  }
+}
+
+rootProject.name = 'cairo-starter'
+
+include 'cairo-authentication'
+include 'cairo-starter-feign'
+include 'cairo-starter-mongodb'
 include 'cairo-starter-service'
-project(':cairo-starter-service').projectDir = file("service")
-
-
-
-// include 'service'
-
-include 'sample'
+// include 'sample'

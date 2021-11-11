@@ -1,18 +1,16 @@
 // maven publish config
 apply plugin: "maven-publish"
-ext {
-  versionRelease = !version.endsWith('SNAPSHOT')
-}
+
 publishing {
   repositories {
-    if (versionRelease) {
+    if (project.hasProperty('release')) {
       if (project.hasProperty('repository.release.url')) {
         maven {
           url project.property('repository.release.url')
           if (project.hasProperty('repository.release.username')) {
             credentials {
-              username project.property('repository.release.username')
-              password project.property('repository.release.password')
+              username project.property('repository.release.username').toString()
+              password project.property('repository.release.password').toString()
             }
           }
         }
@@ -23,8 +21,8 @@ publishing {
           url project.property('repository.snapshot.url')
           if (project.hasProperty('repository.snapshot.username')) {
             credentials {
-              username project.property('repository.snapshot.username')
-              password project.property('repository.snapshot.password')
+              username project.property('repository.snapshot.username').toString()
+              password project.property('repository.snapshot.password').toString()
             }
           }
         }
@@ -74,7 +72,7 @@ publishing {
         }
       }
       versionMapping {
-        usage('java-api') {
+        usage('java-implementation') {
           fromResolutionOf('runtimeClasspath')
         }
         usage('java-runtime') {

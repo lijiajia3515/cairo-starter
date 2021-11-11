@@ -1,0 +1,14 @@
+apply from: "${rootDir}/gradle/publish.gradle"
+
+dependencies {
+  compileOnly(group: 'org.springframework.boot', name: 'spring-boot-autoconfigure')
+  compileOnly(group: 'org.springframework.data', name: 'spring-data-mongodb')
+
+  api(group: 'com.lijiajia3515.cairo', name: 'cairo-mongodb', version: "${cairoVersion}")
+  api(group: 'com.lijiajia3515.cairo', name: 'cairo-security', version: "${cairoVersion}")
+
+
+
+
+
+}

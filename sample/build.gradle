@@ -37,7 +37,7 @@ dependencies {
   // implementation "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config"
 
   // cairo
-  implementation project(":cairo-starter-mongo")
+  implementation project(":cairo-starter-mongodb")
   implementation project(":cairo-starter-service")
 
   // test

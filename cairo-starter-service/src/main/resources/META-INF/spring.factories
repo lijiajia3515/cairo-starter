@@ -1,0 +1,10 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.lijiajia3515.cairo.starter.service.autoconfigure.CairoExceptionHandlerConfiguration,\
+  com.lijiajia3515.cairo.starter.service.autoconfigure.CairoWebConfiguration,\
+  com.lijiajia3515.cairo.starter.service.autoconfigure.CairoWebConfiguration.ReturnValueConfiguration,\
+  com.lijiajia3515.cairo.starter.service.autoconfigure.CairoSecurityOAuth2Configuration,\
+  com.lijiajia3515.cairo.starter.service.autoconfigure.CairoSecurityOAuth2Configuration.HandlerConfiguration,\
+  com.lijiajia3515.cairo.starter.service.autoconfigure.CairoSecurityOAuth2Configuration.ResourceServerConfiguration
+
+

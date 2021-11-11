@@ -1,0 +1,11 @@
+apply from: "${rootDir}/gradle/publish.gradle"
+
+dependencies {
+  // autoconfigure
+  compileOnly(group: 'org.springframework.boot', name: 'spring-boot-autoconfigure')
+
+  // cairo
+  api(group: 'com.lijiajia3515.cairo', name: 'cairo-client', version: "${cairoVersion}")
+  api(group: 'com.lijiajia3515.cairo', name: 'cairo-security', version: "${cairoVersion}")
+
+}
